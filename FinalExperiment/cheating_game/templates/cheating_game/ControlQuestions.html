@@ -1,0 +1,79 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+    
+    <img src="{% static "global/welcome_.jpg" %}" width = "900"/>
+    <p>   Welcome to the Experiment! </p>
+    <br /> 
+    <p>Thank you for participating in our experiment, if you participated in the exeperiment via link, we apologise for not being to offer real payments. For the purpose of our research we kindly ask you to engage in the experiments as if the payoffs were real. We highly appreciate your participation.</p>
+
+    <br /> 
+    <p> In this experiment you will be paired up with another player forming a team. You and your teammate will be presented with separate videos showing a series of coin tosses. You will be asked to report the outcome of the second coin toss, i.e ‘heads’ or ‘tails’.
+      What you earn during this experiment is based on the reports you and your teammate provide. We provide a more through explanation below.</p>
+ <br />  
+ <br />    
+
+
+<br />  
+<br />  
+<hr>  
+
+<br />
+<p> When reporting the coin toss it is important to acknowledge that: </p>
+<ul>
+  <li>Reporting ‘heads’ contributes to the group payoff by €5.00 </li>
+  <li>Reporting ‘tails’ contributes to the group payoff by €0.00.</li>
+</ul>  
+ <p> Do not confuse report contributions -<span style="font-style: italic; color: grey";>mentioned above</span> with your payoff and your teammate's payoff. Below we provide some mathematical formulas and further explanation. </p>   
+    <br />  
+    <p style= "text-decoration:underline;"> The Payoff Mechanics: </p>
+<p>
+
+Your individual payoff -<span style="font-style: italic; color: grey";>as participant i </span> is later calculated by equally splitting up the group payoff $$ \pi_i = \frac{\pi_{g}}{2} $$ Where $$ \pi_g = p_{i} + p_{j} $$ $\pi_i$: participant i's payoff. <br> $\pi_g$: group Payoff. <br> $p_i$,($p_j$): player's (teammate's) report contribution to the group payoff.
+</p>
+
+<p> Put simply, your payoff is an equal split of the group payoff. Reporting heads generates a payoff of €5.00 while reporting tales generates a payoff of €0.00. For example, if your teammate reported heads and you reported tails, your group earns €5.00. Accordingly each of you would earn €2.50. <br>
+
+<hr>  
+
+<br />  
+<br />      
+    
+    <p style="font-size:20px; text-align:center;"> Quiz! </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion1 }} </p>
+    <p> {% formfield player.controlQuestionChoices1 %} </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion2 }} </p>
+    <p> {% formfield player.controlQuestionChoices2 %} </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion3 }} </p>
+    <p> {% formfield player.controlQuestionChoices3 %} </p>
+    <br /> 
+    <br /> 
+    <p> The video is only presented once! You will then be asked to report the value of the second coin toss. <br>
+    Press next to proceed to video. <p/>
+    {% next_button %}
+
+{% endblock %}

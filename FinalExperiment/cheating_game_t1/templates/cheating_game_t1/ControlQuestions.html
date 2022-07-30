@@ -1,0 +1,121 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+    
+<img src="{% static "global/welcome_.jpg" %}" width = "900"/>
+<p>   Welcome to the Experiment! </p>
+<br /> 
+<p>Thank you for participating in our experiment, if you participated in the exeperiment via link, we apologise for not being to offer real payments. For the purpose of our research we kindly ask you to engage in the experiments as if the payoffs were real. We highly appreciate your participation.</p>
+
+<br /> 
+<p> In this experiment you will be paired up with another player forming a team. You and your teammate will be presented with separate videos showing a series of coin tosses. You will be asked to report the outcome of the second coin toss, i.e ‘heads’ or ‘tails’.
+  What you earn during this experiment is based on the reports you and your teammate provide. We provide a more through explanation below.</p>
+<br />  
+<br />    
+
+
+<br />  
+<br />  
+<hr>  
+
+
+<br />  
+<br />  
+<p> When reporting the coin toss it is important to acknowledge that: </p>
+<ul>
+  <li>Reporting ‘heads’ contributes to the group payoff by €5.00 </li>
+  <li>Reporting ‘tails’ contributes to the group payoff by €0.00.</li>
+</ul>  
+ <p> Do not confuse report contributions -<span style="font-style: italic; color: grey";>mentioned above</span> with your payoff and your teammate's payoff. Below we provide some mathematical formulas and further explanation. </p>   
+    <br />  
+    <p style= "text-decoration:underline;"> The Payoff Mechanics: </p>
+<p>
+
+
+
+<p> As shown above, reporting heads is associated with a positive payoff, which could serve as a motivation to misreport the coin flip outcome in case tails is shown. However, there is a 25% chance that you will be supervised.</p>
+
+<p>To explain the payoff we start off with the simple scenario that neiter you nor your team mate will be supervised. In this case the payoffs are determined as follows: <br>
+$$ \pi_i = \pi_j = \frac{\pi_{g}}{2} $$
+<p> Put simply, your payoff is simply an equal split of the group payoff, and reporting heads generates a payoff of €5.00 while reporting tales generates €0.00. For example, if you teammate reported heads and you reported tails, your group earns €5.00 and each of you earns €2.50. <br>
+
+  <p>If one team member $i$ is supervised and reported a false coin toss, it results in the following payoffs:  <br>
+<table style="width:100%;text-align:center">
+  <tr>
+    <th> Individual $i$</th>
+    <th> Individual $j$</th> 
+  </tr>
+  <tr>
+    <td>$ \pi_i =-1 + \frac{p_{j}}{2} $</td>
+    <td>$ \pi_j = \frac{\pi_{g}}{2} $</td>
+  </tr>
+</table>
+<br /> 
+<p style= "font-size:12px"> i.e. Individual $j$'s payoff will not be penalised by his teammate $i$'s lie <p/>
+
+  <p> In this case your payoff is an equal split of the group payoff. Reporting heads generates a payoff of €5.00 while reporting tales generates a payoff of €0.00. For example, if your teammate reported heads and you reported tails, your group earns €5.00. Accordingly each of you would earn €2.50. <br>
+
+  <!--
+<p>Formulas for individual i and individual j:</p>
+<table style="width:100%;text-align:center">
+  <tr>
+    <th> Individual Detected Lying</th>
+    <th> Individual Detected Not Lying / No Lying Detection</th> 
+  </tr>
+  <tr>
+    <td>$ \pi_i =-1 + \frac{p_{j}}{2} $</td>
+    <td>$ \pi_i = \frac{\pi_{g}}{2} $</td>
+  </tr>
+</table>
+<br /> 
+-->
+
+<p>
+Where $$ \pi_g = p_{i} + p_{j} $$ $\pi_i$: participant i's payoff. <br> $\pi_g$: group's Payoff. <br> $p_i$,($p_j$): player's (teammate's) report contribution to the group payoff.
+</p>
+
+<p> Put simply, if you get caught misreporting the coin toss you will earn half the value associated with whichever your teammate reports (€5.00 in case of heads, €0.00 in case of tails) subtracting €1.00 (as a penalty). On the otherhand, your partner still earns an equal split of the values associated with the reports. They would benefit from your lie. Assuming your teammate reported tails, you would earn -€1.00 and they would earn €2.50.<br>
+
+
+<hr>  
+
+<br />  
+<br />      
+    
+    <p style="font-size:20px; text-align:center;"> Quiz! </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion1 }} </p>
+    <p> {% formfield player.controlQuestionChoices1 %} </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion2 }} </p>
+    <p> {% formfield player.controlQuestionChoices2 %} </p>
+    <br /> 
+    <p> {{ Constants.controlQuestion3 }} </p>
+    <p> {% formfield player.controlQuestionChoices3 %} </p>
+    <br /> 
+    <br /> 
+    <p> The video is only presented once! You will then be asked to report the value of the second coin toss. <br>
+    Press next to proceed to video. <p/>
+    {% next_button %}
+
+{% endblock %}

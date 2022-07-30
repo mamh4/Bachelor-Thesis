@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %} <!leave as is>
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+    {% formfield player.age %} <!prompt age from class player>
+    {% formfield player.gender %}
+    {% formfield player.nationality %}
+    <p> You witnessed         
+        {% if player.player_witness == 1 %}
+            Heads <!INTENDDDDDDDDDDDDDDDDDDDDD>
+        {% elif player.player_witness == 0 %}
+            Tails
+        {% endif %} 
+        
+        but reported         
+        {% if player.player_report == 1 %}
+            Heads <!INTENDDDDDDDDDDDDDDDDDDDDD>
+        {% elif player.player_report == 0 %}
+            Tails
+        {% endif %}. 
+        Please explain your intention. <p/>
+    
+    {% formfield player.intention %}
+    {% formfield player.comment %}
+
+    {% next_button %}<!Go to next page>
+
+{% endblock %}
+

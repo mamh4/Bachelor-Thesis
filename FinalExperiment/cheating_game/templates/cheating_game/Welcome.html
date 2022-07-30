@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+    <img src="{% static "global/welcome_.jpg" %}" width = "800"/>
+    
+
+    <p>   Welcome to the Experiment! </p>
+    
+    <p> In this experiment you will be paired up with another player forming a team. You and your teammate will be presented with a video showing a series of coin tosses. You will be asked to report the outcome of the second coin toss, i.e ‘heads’ or ‘tails’.
+    Depending on the reports provided by you and your teammate a group payoff will be generated. The group payoff impacts your individual payoff which you should receive after participating in the experiment excl. the participation fee. </p>
+ <br />  
+ <br />    
+    <p style= "text-align:center;"> <span style="color: red">Disclosure!</span></p>
+ <br /> 
+    <p>This experiment is a only a pre-run, thus, there will be no actual payments after participation. For the purpose of our research we kindly ask you to engage in the experiments as if the payoffs were real. </p>
+    <p>We highly appreciate your participation</p>
+
+
+
+    {% next_button %}
+
+{% endblock %}

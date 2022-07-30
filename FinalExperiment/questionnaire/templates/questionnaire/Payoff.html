@@ -1,0 +1,24 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    End
+{% endblock %}
+
+{% block content %}
+    <p> Thank you for your participation!</p>
+    <p> Your group payoff for this experiment is :<br>  <!br is just to force line breaks ;)>
+    {{group.payoff}} <!Thank you otree>
+    </p>
+     <br />  
+    <p>        
+         <br>
+        Your total payoff including participation fee is {{player.payoff}}.
+    </p>
+
+
+
+ {% next_button %}
+
+{% endblock %}
+<!This is the final final final page just include it in questionnaire sequence ;)>

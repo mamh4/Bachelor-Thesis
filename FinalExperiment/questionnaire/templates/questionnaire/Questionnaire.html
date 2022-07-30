@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %} <!leave as is>
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+    {% formfield player.age %} <!prompt age from class player>
+    {% formfield player.gender %}
+    {% formfield player.nationality %}
+    {% formfield player.comment %}
+
+    {% next_button %}<!Go to next page>
+
+{% endblock %}
