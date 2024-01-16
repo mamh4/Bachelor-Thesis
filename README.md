@@ -29,6 +29,7 @@ The players then proceed to a time-out page that lasts 10 seconds showing a vide
 
 ## Questionnaire Page
 The player is then presented with a few questions one of which states what the outcome of the video the player watched was and what they reported and asks them of the reasoning behind their choice whether being honest or lying.
+
 ![image](https://github.com/mamh4/Bachelor-Thesis/assets/57665567/c74187b4-c3f4-48d1-8328-f23cb65b5ac7)
 
 ## (potential) Waiting Page
